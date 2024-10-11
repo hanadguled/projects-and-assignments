@@ -1,0 +1,26 @@
+#2
+import random
+
+marks = []
+
+while True:
+    grades = int(input("Enter your grade 12 marks <Type -1 to exit>: "))
+    marks.append(grades)
+
+    if grades == -1:
+        marks.sort(reverse = True)
+        break
+    elif grades < 0:
+        print("Invalid grades. Try again.")
+        break
+
+
+if len(marks) < 6:
+    print("Not enough grades. Please try again")
+
+if len(marks) >= 6:
+    average = marks[0] + marks[1] + marks[2] + marks[3] + marks[4] + marks[5]
+
+    result = average / 6
+
+    print(f"Your average is {result:.2f}")
