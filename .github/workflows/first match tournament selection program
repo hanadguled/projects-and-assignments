@@ -1,0 +1,28 @@
+#1
+import random
+
+players = []
+
+while True:
+    name = input("Enter players <Type exit to exit>: ")
+
+    name = name.lower()
+
+    if name == "exit":
+        break
+   
+    players.append(name)
+       
+
+if len(players) < 3:
+    print("Not enough players")
+ 
+if len(players) % 2 != 0:
+    players.append("Bye")
+   
+
+random.shuffle(players)
+
+if len(players) >= 3:
+    for i in range(0, len(players), 2):
+       print(f"{players[i]} vs {players[i + 1]}")
